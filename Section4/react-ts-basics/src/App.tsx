@@ -2,8 +2,10 @@ import CourseGoal from "./components/CourseGoal.tsx";
 import goalsImg from "./assets/100-life-goals.png"
 import Header from "./components/Header.tsx";
 import CourseGoalList from "./components/CourseGoalList.tsx";
-import { useState } from "react";
 import NewGoal from "./components/NewGoal.tsx";
+import { useState } from "react";
+
+
 
 export type CourseGoal = {
   title: string;
