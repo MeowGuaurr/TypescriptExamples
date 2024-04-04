@@ -1,9 +1,16 @@
 import { type ComponentPropsWithoutRef } from "react";
 
-type ButtonProps = ComponentPropsWithoutRef<'button'>;
+// Merge ButtonProps type witn href set to never, not to accept href references un button
+type ButtonProps = ComponentPropsWithoutRef<'button'> & {
+    href? : never;
+};
 
-type AnchorProps = ComponentPropsWithoutRef<'a'>;
+type AnchorProps = ComponentPropsWithoutRef<'a'> & {
+    href? : string;
+};
 
+// Type predicate to check the value from props: ButtonProps | AnchorProps 
+// is true then is going to be type AnchorProps
 function isAnchorProps(props: ButtonProps | AnchorProps): props is AnchorProps {
     return 'href' in props;
 }
