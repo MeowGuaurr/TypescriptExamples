@@ -1,10 +1,11 @@
-// import { User } from "./User.ts";
-// import { Company } from "./Company.ts";
+import { User } from "./User.ts";
+import { Company } from "./Company.ts";
+import { CustomMap } from "./CustomMap";
 
-new google.maps.Map(document.getElementById('map') as HTMLElement, {
-    zoom: 3,
-    center: {
-        lat: 10,
-        lng: 10
-    }
-});
+const user = new User();
+const company = new Company();
+const customMap = new CustomMap('map');
+
+// we can not access customMap.googleMap bc is a private property
+customMap.addMarker(user)
+customMap.addMarker(company)
